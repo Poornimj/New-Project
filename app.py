@@ -4,7 +4,6 @@ from geopy.distance import geodesic
 
 app = Flask(__name__)
 
-# Configuration for database connection
 DATABASE_CONFIG = {
     'host': 'localhost',
     'port': 3306,
@@ -16,7 +15,6 @@ DATABASE_CONFIG = {
     'autocommit': True
 }
 
-# Database connection management
 def get_db():
     if 'db' not in g:
         g.db = connect(**DATABASE_CONFIG)
@@ -35,7 +33,6 @@ def index():
 def teardown_db(exception):
     close_db()
 
-# Function to calculate distance
 def calculate_distance(airport1, airport2):
     try:
         db = get_db()
@@ -57,7 +54,6 @@ def calculate_distance(airport1, airport2):
     except Error as e:
         return None, str(e)
 
-# Endpoint to get available airport codes
 @app.route('/airports', methods=['GET'])
 def get_airport_codes():
     try:
@@ -69,7 +65,6 @@ def get_airport_codes():
     except Error as e:
         return jsonify({'error': str(e)}), 500
 
-# Endpoint to calculate distance between airports
 @app.route('/distance', methods=['POST'])
 def get_distance():
     data = request.json
@@ -84,7 +79,6 @@ def get_distance():
         return jsonify({'error': error}), 400
     return jsonify({'distance': distance}), 200
 
-# Endpoint to handle quests
 @app.route('/quests', methods=['POST'])
 def handle_quests():
     data = request.json
@@ -98,6 +92,5 @@ def handle_quests():
         }), 200
     return jsonify({'message': 'No quest found at this location'}), 404
 
-# Run the server
 if __name__ == '__main__':
     app.run(debug=True)

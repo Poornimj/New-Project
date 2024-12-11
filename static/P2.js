@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const questDetails = document.getElementById("quest-details");
 
   let money = 0;
-  let currentLocation = 1; // Starting airport ID
+  let currentLocation = 1;
 
   // Fetch airport data
   async function fetchAirports() {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Start a quest
+
   startQuestButton.addEventListener("click", async () => {
     try {
       const response = await fetch('/quests', {
@@ -40,13 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Add interval logic
   setInterval(() => {
     money += 10;
     playerMoney.textContent = `$${money}`;
   }, 3000);
 
-  // Initial fetch
   fetchAirports();
 });
 
