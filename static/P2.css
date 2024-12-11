@@ -1,0 +1,105 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('images/steampunk-background.png') no-repeat center center/cover;
+  color: #fff;
+  overflow: hidden;
+}
+
+.game-ui {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border: 3px solid #c08d55;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.header h1 {
+  font-size: 48px;
+  margin: 0;
+  padding: 0;
+  color: #ffdf80;
+  text-shadow: 0px 0px 15px #ffdf80, 0px 0px 5px #c08d55;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.active-quest {
+  margin-top: 20px;
+  background: rgba(50, 50, 50, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #ffdf80;
+}
+
+.active-quest h2 {
+  margin: 0;
+  color: #ffdf80;
+  text-shadow: 0 0 10px #c08d55;
+}
+
+.action-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom, #5cb85c, #4cae4c);
+  border: 2px solid #ffdf80;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.action-button:hover {
+  background: linear-gradient(to bottom, #67d267, #55be55);
+  transform: scale(1.1);
+}
+
+.player-tab {
+  margin: 20px 0;
+  padding: 10px;
+  background: rgba(50, 50, 50, 0.8);
+  border-radius: 10px;
+  display: inline-block;
+  border: 2px solid #ffdf80;
+}
+
+.player-tab p {
+  margin: 0;
+  font-size: 18px;
+  color: #ffdf80;
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.menu-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 15px 40px;
+  margin: 10px;
+  background: linear-gradient(to bottom, #d27e36, #8b4a22);
+  border: 2px solid #ffdf80;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.menu-button:hover {
+  background: linear-gradient(to bottom, #e09756, #b5673a);
+  transform: scale(1.1);
+}
