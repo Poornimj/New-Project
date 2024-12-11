@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, g
+from flask import Flask, request, jsonify, g, render_template
 from mysql.connector import connect, Error
 from geopy.distance import geodesic
 
@@ -26,6 +26,10 @@ def close_db(e=None):
     db = g.pop('db', None)
     if db:
         db.close()
+
+@app.route('/')
+def index():
+    return render_template('P2.html')
 
 @app.teardown_appcontext
 def teardown_db(exception):
